@@ -10,8 +10,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      tasks: ['clean', 'eat', 'code'],
-      completedTasks: ['golf'],
+      tasks: [],
+      completedTasks: [],
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.completeTask = this.completeTask.bind(this);
