@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class TasksCompleted extends Component {
   render() {
@@ -20,4 +21,11 @@ class TasksCompleted extends Component {
   }
 }
 
-export default TasksCompleted;
+
+function mapStateToProps(state){
+  return {
+    completedTasks: state.tasksCompleted
+  }
+}
+
+export default connect(mapStateToProps)(TasksCompleted);
