@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class TaskList extends Component {
   render() {
@@ -32,4 +33,10 @@ class TaskList extends Component {
   }
 }
 
-export default TaskList;
+function mapStateToProps(state){
+  return {
+    tasks: state.tasksToDo
+  }
+}
+
+export default connect(mapStateToProps, {})(TaskList);

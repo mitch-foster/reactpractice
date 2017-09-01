@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import addTask from './../ducks/taskList';
 
 class TaskForm extends Component {
   constructor(props){
@@ -6,6 +8,19 @@ class TaskForm extends Component {
     this.state = {
       inputValue: '',
       changeClass: false,
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(e){
+    e.preventDefault();
+    const newTask = this.state.inputValue.trim();
+    console.log('newTask:', newTask)
+    if(newTask){
+      this.props.addTask(newTask)
+      this.setState({
+        inputValue: '', 
+        changeClass: !this.state.changeClass
+      })
     }
   }
   render() {
@@ -17,11 +32,7 @@ class TaskForm extends Component {
                   placeholder='New Task' 
                   value={this.state.inputValue}
           />
-          <button onClick={e=>{
-                                this.props.handleSubmit(e, this.state.inputValue)
-                                this.setState({inputValue: '', changeClass: !this.state.changeClass})
-                              }}
-          >
+          <button onClick={this.handleSubmit}>
             Add Task
           </button>
         </form>
@@ -30,4 +41,4 @@ class TaskForm extends Component {
   }
 }
 
-export default TaskForm;
+export default connect(null, { addTask })(TaskForm);
