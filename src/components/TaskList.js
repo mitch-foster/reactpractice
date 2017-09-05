@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteTask, completeTask } from './../ducks/taskList'
 
 class TaskList extends Component {
   render() {
@@ -11,12 +12,12 @@ class TaskList extends Component {
           </h2>
           <div>
             <button style ={{height: '25px'}}
-                    onClick={()=>{this.props.completeTask(tasks, i)}}
-            >
+                    onClick={()=>{this.props.completeTask(i)}}
+            >       
               Completed
             </button>
             <button style ={{height: '25px'}}
-                    onClick={()=>{this.props.deleteTask(tasks, i)}}
+                    onClick={()=>this.props.deleteTask(i)}
             >
               Delete
             </button>
@@ -39,4 +40,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, {})(TaskList);
+export default connect(mapStateToProps, { deleteTask, completeTask })(TaskList);
