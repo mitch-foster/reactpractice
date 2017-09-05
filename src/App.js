@@ -25,7 +25,7 @@ class App extends Component {
         <div style={{marginTop: '20px'}}>------------------------------------------------------------------------------------------</div>
         <TaskList/>
         <div style={{marginTop: '20px'}}>------------------------------------------------------------------------------------------</div>
-        {/* <TasksCompleted/> */}
+        <TasksCompleted/>
       </div>
     );
   }
