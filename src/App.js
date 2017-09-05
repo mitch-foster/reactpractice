@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
-import TasksCompleted from './components/TasksCompleted';
+// import TaskList from './components/TaskList';
+// import TasksCompleted from './components/TasksCompleted';
 
 class App extends Component {
   constructor(props){
