@@ -7,13 +7,6 @@ import TaskList from './components/TaskList';
 import TasksCompleted from './components/TasksCompleted';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      tasks: [],
-      completedTasks: [],
-    }
-  }
   render() {
     return (
       <div className="App">

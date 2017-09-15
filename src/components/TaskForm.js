@@ -14,7 +14,6 @@ class TaskForm extends Component {
   handleSubmit(e){
     e.preventDefault();
     const newTask = this.state.inputValue.trim();
-    console.log('newTask:', newTask)
     if(newTask){
       this.props.addTask(newTask)
       this.setState({
